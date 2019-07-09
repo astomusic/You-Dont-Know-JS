@@ -37,7 +37,7 @@ a === b // fasle
 - 문자열은 불변값으로 특정 index에 접근은 가능하나 수정은 불가.
   > 따라서 문자열 매서드는 항상 새로운 문자열을 생성한다. (ex. toUpperCase)
 - 배열의 메서드중 불변 배열 메서드만 사용 가능.
-  > join, map등은 가능 reverse는 불가
+  > Array.prototype에 있는 join, map등은 빌려쓰기 가능 reverse는 불가
 - 따라서 split해서 배열화 한후 수정후 join하는 방식으로 사용
 
 ## 2.3 숫자
@@ -49,10 +49,11 @@ a === b // fasle
 ```js
 .42 === 0.42 // true
 42.0 === 42 // true
+42. === 42 // true (dot 체이닝과 혼동됨으로 비추 ex.toFixed함수)
 2e2 === 200 // true
 2e+2  === 200 // true (toExponential)
 ```
-- Number.prototype 사용가능 [Number.rototype](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number/prototype)
+- Number.prototype 사용가능 [Number.prototype](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number/prototype)
 - 다른 진법 사용 가능
 ```js
 0xf3 === 243 // true 16진법
@@ -60,6 +61,7 @@ a === b // fasle
 0o363 === 243 // true 8진법
 0b11110011 === 243 // true 2진법
 ```
+> 진법 사용시 대소문자 구분이 없지만, '0O'같이 보기에 어려울수 있으니 소문자 추천 
 
 ### 2.3.2 작은 소수값
 ```js
@@ -86,6 +88,7 @@ return typeof num === "number" && Math.abs(num) <= Number.MAX_SAFE_INTEGER;
 ```js
 a | 0 // '| 0' 로 32비트 정수로 강제변환 
 ```
+> 정수의 안전번위는 Number.MIN_SAFE_INTEGER ~ Number.MAX_SAFE_INTEGER 이지만, 32비트만 가능한 연산이 있으니 약 -21억 ~ 21억까지로 범위가 줄어든다.
 
 ## 2.4 특수값
 ### 2.4.1 값이 아닌값
@@ -122,6 +125,7 @@ Number.isNaN = function(n) {
 ```
  - 무한대 (Number.POSITIVE_INFINITY / Number.NEGATIVE_INFINITY)
  - 영 (0 / -0)
+> -0, +0의 개념은 그 진전까지의 이변수의 이동방향이 무언이지 알수 있다. 수학의 limit 처럼, 잠재적인 정보를 나타내고 있다.
 ```js
 var a = 3 / Number.POSITIVE_INFINITY // 0
 var b = -3 / Number.POSITIVE_INFINITY // -0
