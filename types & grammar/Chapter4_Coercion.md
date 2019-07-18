@@ -294,6 +294,7 @@ a, b, c는 거짓인 값을 감싼 object인데, 이게 `true`냐 `false`냐.
 var d = Boolean(a && b && c);
 
 d; // true
+// 4.2.3.1에서 나온 거짓인 값 목록 외의 모든 것은 true이다.
 ```
 
 결론적으로 a, b, c 셋 다 `true`이다.
