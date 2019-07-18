@@ -220,5 +220,5 @@ isThisCool(
 
 프로타입으로 디폴트 값을 세팅하면 이미 내장된 프로토타입을 이용하므로 사소하지만 추가적인 이점이 있다.
 
-또한 이후에 변경될 디폴트 값으로 `Array.prototype`을 사용하지 말자. 위 예제에서 vals 변수를 수정할 경우 결구 `Array.prototype`도 수정되게 된다.
+또한 이후에 변경될 디폴트 값으로 `Array.prototype`을 사용하지 말자. 위 예제에서 vals 변수를 수정할 경우 결국 `Array.prototype`도 수정되게 된다.
 
