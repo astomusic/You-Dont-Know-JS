@@ -196,4 +196,42 @@ foo(10, null); // 2, 10, null, 10, null
 - 인자와 이 인자에 해당하는 arguments 슬롯을 동시에 참조하지 마라.
 
 ## 5.6 try...finally
-
+- try 이후 catch나 finally중 하나만 필수
+- finally는 반드시 실행됨 콜백함수처럼
+- finally와 break는 함꼐 쓰지말자.(리턴을 취소해버림)
+```js
+function foo() {
+  try {
+    return 38; // throw 도 마찬가지
+  } finally {
+    console.log('hello'); 
+    // throw 30; // finally부에서 예외를 던지면, try의 리턴값 사라진다. // 30
+    // return; // finally부에서 return값이 우선된다. try의 리턴값 사라진다. // undefined
+  }
+  console.log('here');
+}
+foo(); // hello 38 
+```
+## 5.7 switch
+- default 이후 에서도 break를 안쓰면 계속 실행된다.
+- switch 문의 조건은 true가 아닐경우 매치실패한다.
+- break가 명시적으로 없는 코드는 이유나 설명을 달아놓자.
+- switch 문의 조건에서 연산은 피하자.
+```js
+var a = 'hi';
+var b = 11
+switch (true) {
+  case (a || b === 11): { // 단락평가에의해 'hi'를 반환하므로 엄격히 true인 경우만 매치된다. 
+    console.log("never"); // 출력되지 않음
+    break;
+  }
+  default: {
+    console.log("here"); // 출력됨 / 하단에 캐이스를 추가하면 달라짐.
+  }
+  // 하단에 case를 추가할경우 default 이후 에서도 break를 안쓰면 계속 실행된다.
+  // case (a === 'hi'): {
+  //   console.log("hi");
+  //   break;
+  // }
+}
+```
