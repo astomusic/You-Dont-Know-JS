@@ -1,0 +1,9 @@
+{
+  "line-length": false,
+  "blanks-around-headers": false,
+  "no-inline-html": {
+    "allowed_elements": [
+      "sup"
+    ]
+  }
+}
