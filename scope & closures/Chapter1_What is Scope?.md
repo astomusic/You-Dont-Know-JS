@@ -146,7 +146,7 @@ b(); // 함수가 아닌 값을 함수처럼 실행하여 'TypeError' 발생
 시간이 많을 경우 혹은 필요한 부분만 떼어서 읽으세요.
 
 - 인터프리터 [[참고](https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0)]
-- 토크나이징과 렉싱의 차이[#tokenizing_and_lexing] [[참고](https://stackoverflow.com/a/380487)]
+- 토크나이징과 렉싱의 차이 [[참고](https://stackoverflow.com/a/380487)]
 - JavaScript 메모리 관리법 [[참고](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)]
 - JavaScript v8엔진 [[참고](https://v8.dev/docs)] [[요약1](https://evan-moon.github.io/2019/06/28/v8-analysis)] [[요약2](https://engineering.huiseoul.com/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%9E%91%EB%8F%99%ED%95%98%EB%8A%94%EA%B0%80-v8-%EC%97%94%EC%A7%84%EC%9D%98-%EB%82%B4%EB%B6%80-%EC%B5%9C%EC%A0%81%ED%99%94%EB%90%9C-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%9E%91%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-%EB%8B%A4%EC%84%AF-%EA%B0%80%EC%A7%80-%ED%8C%81-6c6f9832c1d9)]
 - Strcit Mode [[참고](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)]
